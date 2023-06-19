@@ -1,0 +1,91 @@
+
+<html>
+<head>
+	<title>Stroke Indicator</title>
+</head>
+<body>
+	<div class="login">
+		<h1>Stroke Indicator</h1>
+		<form action="{{url_for('predict_datapoint')}}" method="post">
+			<fieldset>
+				<legend>Stroke Prediction</legend>
+				<div class="mb-3">
+					<label for="gender" class="form-label">Gender</label>
+					<select id="gender" class="form-control" name="gender" required>
+						<option value="" disabled selected>Select your Gender</option>
+						<option value="male">Male</option>
+						<option value="female">Female</option>
+					</select>
+				</div>
+				<div class="mb-3">
+					<label for="hypertension" class="form-label">Hypertension</label>
+					<select id="hypertension" class="form-control" name="hypertension" required>
+						<option value="" disabled selected>Select Hypertension</option>
+						<option value="1">1</option>
+						<option value="0">0</option>
+					</select>
+				</div>
+				<div class="mb-3">
+					<label for="age" class="form-label">Age</label>
+					<input type="number" id="age" class="form-control" name="age" placeholder="Enter the age" min="0" max="100" required>
+				</div>
+				<div class="mb-3">
+					<label for="bmi" class="form-label">BMI</label>
+					<input type="number" id="bmi" class="form-control" name="bmi" placeholder="Enter the bmi" min="0" max="1000" required>
+				</div>
+                <div class="mb-3">
+					<label for="avg_glucose_level" class="form-label">avg_glucose_level</label>
+					<input type="number" id="avg_glucose_level" class="form-control" name="avg_glucose_level" placeholder="Enter the avg_glucose_level" min="0" max="1000" required>
+				</div>
+                <div class="mb-3">
+					<label for="heart_disease" class="form-label">heart_disease</label>
+					<select id="heart_disease" class="form-control" name="heart_disease" required>
+						<option value="" disabled selected>Select heart_disease</option>
+						<option value="1">1</option>
+						<option value="0">0</option>
+					</select>
+				</div>
+				<div class="mb-3">
+					<label for="smoking_status" class="form-label">Smoking Status</label>
+					<select id="smoking_status" class="form-control" name="smoking_status" required>
+						<option value="" disabled selected>Select Smoking Status</option>
+						<option value="unknown">Unknown</option>
+						<option value="formerly_smoked">Formerly Smoked</option>
+						<option value="never_smoked">Never Smoked</option>
+						<option value="smokes">Smokes</option>
+					</select>
+				</div>
+				<div class="mb-3">
+					<label for="residence_type" class="form-label">Residence Type</label>
+					<select id="residence_type" class="form-control" name="residence_type" required>
+						<option value="" disabled selected>Select Residence Type</option>
+						<option value="Urban">Urban</option>
+						<option value="Rural">Rural</option>
+					</select>
+				</div>
+				<div class="mb-3">
+					<label for="work_type" class="form-label">Work Type</label>
+					<select id="work_type" class="form-control" name="work_type" required>
+						<option value="" disabled selected>Select Work Type</option>
+						<option value="children">Children</option>
+						<option value="never_worked">Never Worked</option>
+						<option value="private">Private</option>
+						<option value="govt_job">Government Job</option>
+						<option value="self_employed">Self Employed</option>
+					</select>
+				</div>
+				<div class="mb-3">
+					<label for="ever_married" class="form-label">ever_married</label>
+					<select id="ever_married" class="form-control" name="ever_married" required>
+						<option value="" disabled selected>Select ever_married</option>
+						<option value="Yes">Yes</option>
+						<option value="No">No</option>
+					</select>
+				</div>
+				<button type="submit" class="btn btn-primary">Predict</button>
+			</fieldset>
+		</form>
+		<h2>The prediction is {{results}}</h2>
+	</div>
+</body>
+</html>
